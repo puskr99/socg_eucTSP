@@ -1,9 +1,9 @@
-"""Table 1 and Table 2 of the paper.
+"""Tables 2 and 3 of the paper.
 
 1. Enumerates the 24 pairs of wedge cut edge types in different wedges, marks the ten excluded by L4 (same outer ray),
    L5 (chains) and L6 (obtuse pair), checks that the fourteen allowed pairs form a triangle-free graph and that no
    three types satisfy (F1)-(F4) of Proposition 12.
-2. Evaluates G(e,e') = |io| + |i'o'| - |ii'| - |oo'| on the fourteen witnesses of Table 2 (all must be < 0).
+2. Evaluates G(e,e') = |io| + |i'o'| - |ii'| - |oo'| on the fourteen witnesses of Table 3 (all must be < 0; exact check: exact_witnesses.py).
 3. Samples random configurations (theta in (0, pi/2]) for every pair: excluded pairs must give min G > 0.
 
 usage: python pair_witnesses.py [SAMPLES=200000] [SEED=0]
@@ -50,7 +50,7 @@ W = [("AB", "AD", 90, .9, 10, .1, 10), ("AB", "BC", 60, .9, 10, .1, 1), ("AB", "
      ("BA", "BC", 90, .1, 10, .9, 10), ("BA", "CD", 60, .9, 1, .9, 10), ("BA", "DC", 90, .9, 10, .9, 10),
      ("DA", "BC", 90, .9, 10, .9, 10), ("CB", "CD", 90, .1, 10, .9, 10), ("CB", "DC", 60, .1, 1, .9, 10),
      ("CD", "DA", 60, .9, 10, .1, 1), ("DA", "DC", 90, .1, 10, .9, 10)]
-print('\nTable 2 witnesses (first type, second type, theta, x=|i|, y=|o|, u=|i\'|, v=|o\'|, G):')
+print('\nTable 3 witnesses (first type, second type, theta, x=|i|, y=|o|, u=|i\'|, v=|o\'|, G):')
 covered = set()
 for a, b, td, x, y, u, v in W:
     assert max(x, u) < min(y, v)
